@@ -1,0 +1,61 @@
+@import './_variables.scss';
+
+.aside {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 275px;
+  z-index: 3;
+}
+
+.notification {
+  margin: 15px;
+  border-radius: 4px;
+  padding: 15px 16px;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  align-items: center;
+  opacity: 0.9;
+
+  &__sign {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: $plain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__desc {
+    color: $plain;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-family: $font;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+}
+
+.success {
+  background-color: $success;
+
+  & .sign {
+    color: $success;
+  }
+}
+
+.sign {
+  color: $plain;
+}
+
+.warning {
+  background-color: $profileColor;
+}
+
+.error {
+  background-color: $error;
+}

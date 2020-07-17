@@ -1,0 +1,140 @@
+@import './_variables.scss';
+
+.header {
+  display: flex;
+  z-index: 4;
+  justify-content: space-between;
+  background-color: $plain;
+  padding: 10px 10%;
+  width: 100%;
+  font-family: $font;
+  animation: animationDown 1s ease-in-out;
+  max-height: 10%;
+  position: fixed;
+  top: 0;
+
+  &__logo {
+    font-size: 32px;
+    display: inline-flex;
+    align-items: baseline;
+    font-weight: 900;
+
+    &--dot {
+      font-size: 25px;
+      display: inline-block;
+      position: relative;
+      font-weight: 900;
+
+      &::before {
+        content: '';
+        top: 0px;
+        left: 1px;
+        height: 5px;
+        width: 5px;
+        display: block;
+        position: absolute;
+        background-color: $profileColor;
+      }
+    }
+
+    &--wrapped {
+      display: flex;
+      height: 35%;
+      flex-direction: column;
+      font-size: 13px;
+      line-height: 1;
+      align-self: center;
+      padding-left: 7px;
+      color: #a9a1a1;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__bell {
+    color: $secondary;
+
+    &:hover {
+      color: $dark-secondary;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: $profileColor;
+    color: $plain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+
+    &--letter {
+      font-size: 28px;
+      font-family: $font;
+      font-weight: 500;
+    }
+  }
+
+  &__check {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 48px;
+
+    &:hover~.menu__avatar {
+      background-color: #FB7E01;
+    }
+  }
+
+  .menu__profile {
+    display: none;
+    position: absolute;
+    right: -5px;
+    top: 50px;
+    width: max-content;
+    height: 95px;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: $plain;
+    box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.75);
+    font-size: 13px;
+
+    &--secondary {
+      width: 100%;
+      color: $secondary;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid $secondary;
+    }
+
+    &--primary {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      width: 100%;
+
+      &:hover {
+        background-color: $backgroundColor;
+      }
+    }
+  }
+
+  &__check:checked~.menu__profile {
+    display: flex;
+  }
+
+}
